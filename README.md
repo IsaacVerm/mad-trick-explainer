@@ -22,3 +22,7 @@ Run `ng new mte`.
 Serve with `ng serve` (from within the app).
 
 Generate new component with `ng generate component`.
+
+## Content of the app
+
+Tricks were taken from [Wikipedia](https://en.wikipedia.org/wiki/List_of_magic_tricks) or [here](https://arresteddevelopment.fandom.com/wiki/G.O.B.%27s_illusions) in case of G.O.B.
