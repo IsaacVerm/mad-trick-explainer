@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { magicians } from './magicians'
 
 @Component({
   selector: 'app-root',
@@ -7,5 +6,4 @@ import { magicians } from './magicians'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  magicians = magicians;
 }
