@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { MagicianListComponent } from './magician-list/magician-list.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { MagicianListComponent } from './magician-list/magician-list.component';
     BrowserModule,
     RouterModule.forRoot([
       { path: 'magician-list', component: MagicianListComponent },
-    ])
+    ]),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
