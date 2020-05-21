@@ -4,14 +4,13 @@ import { magicians } from '../magicians'
 @Component({
   selector: 'app-magician-list',
   templateUrl: './magician-list.component.html',
-  styleUrls: ['./magician-list.component.css']
+  styleUrls: ['./magician-list.component.css'],
 })
 export class MagicianListComponent implements OnInit {
   magicians = magicians;
+  columnsToDisplay = ['name'];
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

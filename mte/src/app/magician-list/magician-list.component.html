@@ -1,6 +1,10 @@
 <h1>Magicians</h1>
-<ul>
-  <li *ngFor="let magician of magicians">
-    {{ magician.name }}
-  </li>
-</ul>
+
+<table mat-table [dataSource]="magicians">
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let magician"> {{ magician.name }} </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+  <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+</table>
