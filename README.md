@@ -12,3 +12,13 @@ Planning on at first 4 prototypes:
 4) let the user add his own magician
 
 This roughly follows the [try it Angular tutorial](https://angular.io/start).
+
+## Scaffolding
+
+Make sure to have `node`, `npm` and `ng` [installed](https://angular.io/guide/setup-local).
+
+Run `ng new mte`.
+
+Serve with `ng serve` (from within the app).
+
+Generate new component with `ng generate component`.
