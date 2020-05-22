@@ -1,7 +1,7 @@
 <h1>Magicians</h1>
 
 <ul>
-  <li *ngFor="let name of magicianNames">
-    {{ name }}
+  <li *ngFor="let name of magicianNames; index as magicianId">
+    <a [routerLink]="['/magicians', magicianId]">{{ name }}</a>
   </li>
 </ul>
