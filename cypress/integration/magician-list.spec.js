@@ -6,7 +6,6 @@ import { assertUrl as assertUrlDetails } from '../support/helpers/components/mag
 
 describe('magician-list', () => {
     it('lists magicians', () => {
-        // test parameters
         const magician = 'Harry Houdini';
         const magicianId = 0
 
