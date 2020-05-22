@@ -31,6 +31,14 @@ Run Cypress tests: `npx cypress open`. Make sure the application is running (`ng
 
 Using Material design turned out to be real easy. Just reading the [getting started](https://material.angular.io/guide/getting-started) guide is sufficient to get up and running.
 
+## Debugging
+
+There's a handy tool to debug an Angular app called [Augury](https://augury.rangle.io/).
+
+## Questions
+
+Open questions are logged in the GitHub issues section.
+
 ## Content of the app
 
 Tricks were taken from [Wikipedia](https://en.wikipedia.org/wiki/List_of_magic_tricks) or [here](https://arresteddevelopment.fandom.com/wiki/G.O.B.%27s_illusions) in case of G.O.B.

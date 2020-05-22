@@ -6,16 +6,18 @@ import {
 } from '@angular/material/table';
 
 import { AppComponent } from './app.component';
-import { TrickListComponent } from './trick-list/trick-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MagicianListComponent } from './magician-list/magician-list.component';
+import { TrickListComponent } from './trick-list/trick-list.component';
 
 @NgModule({
-  declarations: [AppComponent, TrickListComponent],
+  declarations: [AppComponent, TrickListComponent, MagicianListComponent],
   imports: [
     BrowserModule,
     MatTableModule,
     RouterModule.forRoot([
       { path: 'trick-list', component: TrickListComponent },
+      { path: 'magician-list', component: MagicianListComponent}
     ]),
     BrowserAnimationsModule,
   ],
