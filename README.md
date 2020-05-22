@@ -25,7 +25,10 @@ Generate new component with `ng generate component`.
 
 ## Tests
 
-Run Cypress tests: `npx cypress open`. Make sure the application is running (`ng serve`).
+To run Cypress tests in debug mode: `npx cypress open`.
+To run the same tests without debugger: `npx cypress run --browser=chrome`. 
+
+In both cases make sure the application is running (`ng serve`).
 
 Tests are divided by component. For example there are `magician-list.spec.js` and `trick-list.spec.js` test files because there are also `magician-list` and `trick-list` components.
 
