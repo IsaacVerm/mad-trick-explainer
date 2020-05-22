@@ -11,3 +11,7 @@ export const magicians = [
          { name: 'Robert Harbin', trick: 'Aztec Lady' },
          { name: 'Robert Harbin', trick: 'The Blades of Opah' },
        ];
+
+export const magicianNames = ['Harry Houdini',
+                              'G.O.B',
+                              'Robert Harbin'];

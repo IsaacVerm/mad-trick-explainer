@@ -1,4 +1,4 @@
-import { magicians } from './../magicians';
+import { magicianNames } from './../magicians';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,10 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./magician-list.component.css'],
 })
 export class MagicianListComponent implements OnInit {
-  // https://medium.com/dailyjs/how-to-remove-array-duplicates-in-es6-5daa8789641c
-  // Set only contains unique values so automatically removes duplicates
-  magicianNames = magicians.map(magician => magician.name);
-  uniqueMagicianNames = Array.from(new Set(this.magicianNames))
+  magicianNames = magicianNames;
 
   constructor() {}
 
