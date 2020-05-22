@@ -27,6 +27,8 @@ Generate new component with `ng generate component`.
 
 Run Cypress tests: `npx cypress open`. Make sure the application is running (`ng serve`).
 
+Tests are divided by component. For example there are `magician-list.spec.js` and `trick-list.spec.js` test files because there are also `magician-list` and `trick-list` components.
+
 ## Material design
 
 Using Material design turned out to be real easy. Just reading the [getting started](https://material.angular.io/guide/getting-started) guide is sufficient to get up and running.

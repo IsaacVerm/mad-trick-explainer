@@ -12,18 +12,16 @@ describe('trick-list', () => {
         const magician = 'Harry Houdini';
         const trick = 'Aztec Tomb'
 
-        // at the moment the only way to get there is by navigating from the homepage
+        // at the moment the only way to get to the list of tricks
+        // is by navigating there from the homepage
         cy.visit('');
 
         openTrickList()
-
         assertUrl()
-
         assertColumnNamesTable()
-
         // if one of the magicians is displayed, it probably works for all of them
-        // same goes for the tricks
         assertMagicianInTable(magician);
+        // same goes for the tricks
         assertTrickInTable(trick)
     })
 })
