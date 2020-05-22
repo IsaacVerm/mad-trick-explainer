@@ -1,13 +1,13 @@
-import { openMagicianList } from '../support/helpers/components/app'
+import { openTrickList } from '../support/helpers/components/app'
 import {
   assertUrl,
   assertColumnNamesTable,
   assertMagicianInTable,
   assertTrickInTable,
-} from "../support/helpers/components/magician-list";
+} from "../support/helpers/components/trick-list";
 
-describe('magician-list', () => {
-    it('has table with magicians and their tricks', () => {
+describe('trick-list', () => {
+    it('has table with tricks by magician', () => {
         // test parameters
         const magician = 'Harry Houdini';
         const trick = 'Aztec Tomb'
@@ -15,7 +15,7 @@ describe('magician-list', () => {
         // at the moment the only way to get there is by navigating from the homepage
         cy.visit('');
 
-        openMagicianList()
+        openTrickList()
 
         assertUrl()
 

@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { magicians } from '../magicians'
+import { magicians } from '../magicians';
 
 @Component({
   selector: 'app-magician-list',
-  templateUrl: './magician-list.component.html',
-  styleUrls: ['./magician-list.component.css'],
+  templateUrl: './trick-list.component.html',
+  styleUrls: ['./trick-list.component.css'],
 })
-export class MagicianListComponent implements OnInit {
+export class TrickListComponent implements OnInit {
   magicians = magicians;
   columnsToDisplay = ['name', 'trick'];
 

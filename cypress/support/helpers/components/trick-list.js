@@ -1,5 +1,5 @@
 export function assertUrl() {
-    cy.url().should("contain", "magician-list");
+    cy.url().should("contain", "trick-list");
 }
 
 export function assertColumnNamesTable() {

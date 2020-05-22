@@ -1,3 +1,3 @@
-export function openMagicianList() {
-    cy.get('a[href="/magician-list"]').click();
+export function openTrickList() {
+    cy.get('a[href="/trick-list"]').click();
 } 

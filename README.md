@@ -25,7 +25,7 @@ Generate new component with `ng generate component`.
 
 ## Tests
 
-Run Cypress tests: `npx cypress open`.
+Run Cypress tests: `npx cypress open`. Make sure the application is running (`ng serve`).
 
 ## Material design
 
