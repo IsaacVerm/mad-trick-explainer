@@ -8,7 +8,7 @@ import { magicians } from '../magicians'
 })
 export class MagicianListComponent implements OnInit {
   magicians = magicians;
-  columnsToDisplay = ['name'];
+  columnsToDisplay = ['name', 'trick'];
 
   constructor() {}
 
