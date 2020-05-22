@@ -1,18 +1,29 @@
+import { openMagicianList } from '../support/helpers/components/app'
+import {
+  assertUrl,
+  assertColumnNamesTable,
+  assertMagicianInTable,
+  assertTrickInTable,
+} from "../support/helpers/components/magician-list";
+
 describe('magician-list', () => {
     it('has table with magicians and their tricks', () => {
+        // test parameters
+        const magician = 'Harry Houdini';
+        const trick = 'Aztec Tomb'
+
         // at the moment the only way to get there is by navigating from the homepage
         cy.visit('http://localhost:4200/');
 
-        cy.get('a[href="/magician-list"]').click();
+        openMagicianList()
 
-        cy.url().should('contain', 'magician-list')
+        assertUrl()
 
-        cy.get('tr[mat-header-row]').should('contain', 'Name').should('contain', 'Trick')
+        assertColumnNamesTable()
 
         // if one of the magicians is displayed, it probably works for all of them
-        cy.get('td').should('contain', 'Harry Houdini')
-
         // same goes for the tricks
-        cy.get('td').should('contain', 'Aztec Tomb')
+        assertMagicianInTable(magician);
+        assertTrickInTable(trick)
     })
 })

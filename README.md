@@ -23,6 +23,10 @@ Serve with `ng serve` (from within the app).
 
 Generate new component with `ng generate component`.
 
+## Tests
+
+Run Cypress tests: `npx cypress open`.
+
 ## Material design
 
 Using Material design turned out to be real easy. Just reading the [getting started](https://material.angular.io/guide/getting-started) guide is sufficient to get up and running.
