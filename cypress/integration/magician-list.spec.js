@@ -13,7 +13,7 @@ describe('magician-list', () => {
         const trick = 'Aztec Tomb'
 
         // at the moment the only way to get there is by navigating from the homepage
-        cy.visit('http://localhost:4200/');
+        cy.visit('');
 
         openMagicianList()
 
