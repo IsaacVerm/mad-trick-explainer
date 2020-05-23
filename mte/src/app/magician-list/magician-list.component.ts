@@ -19,11 +19,10 @@ export class MagicianListComponent implements OnInit {
   }
 
   getMagicianNames() {
-    // this.magicianNames = this.magiciansService
-    //   .getMagicianNames()
-    //   .subscribe((response: MagicianNames) => {
-    //     this.magicianNames = response.names;
-    //   });
-    this.magicianNames = this.magiciansService.getMagicianNames();
+    this.magiciansService
+      .getMagicianNames()
+      .subscribe((response: MagicianNames) => {
+        this.magicianNames = response.names;
+      });
   }
 }
