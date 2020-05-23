@@ -41,6 +41,10 @@ cd backend;
 pip install -r requirements.txt
 ```
 
+## Configuration
+
+Configuration can be found in the `backend/config.py` file. This configuration is shared with the web app and Cypress tests using the `/config` route.
+
 ## Running the web app
 
 Run the Angular frontend:
@@ -53,7 +57,7 @@ Run the Flask backend:
 
 ```
 cd backend;
-export FLASK_APP=magician-names.py;
+export FLASK_APP=backend.py;
 flask run --cert=adhoc;
 ```
 
