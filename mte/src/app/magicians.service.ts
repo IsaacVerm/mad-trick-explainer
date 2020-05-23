@@ -16,6 +16,6 @@ export class MagiciansService {
   ) { }
 
   getMagicianNames() {
-    return this.http.get<MagicianNames>('http://localhost:3000/names');
+    return this.http.get<MagicianNames>('https://127.0.0.1:5000/names');
   }
 }
