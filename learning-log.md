@@ -46,8 +46,18 @@ A way to write display-value transformations that you can declare in your HTML.
 
 ## 23-05-2020
 
+### Dependency injection
+
 Components consume services. 
 
 An injector creates dependencies, and maintains a container of dependency instances that it reuses if possible.
 
 A provider is an object that tells an injector how to obtain or create a dependency.
+
+### Observables
+
+The observer pattern is a software design pattern in which an object, called the subject, maintains a list of its dependents, called observers, and notifies them automatically of state changes.
+
+Observables are declarative—that is, you define a function for publishing values, but it is not executed until a consumer subscribes to it. The subscribed consumer then receives notifications until the function completes, or until they unsubscribe.
+
+The API for receiving values is the same whether the values are delivered synchronously or asynchronously.

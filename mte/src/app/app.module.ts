@@ -7,6 +7,8 @@ import {
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+
 import { MagicianListComponent } from './magician-list/magician-list.component';
 import { TrickListComponent } from './trick-list/trick-list.component';
 import { MagicianDetailsComponent } from './magician-details/magician-details.component';
@@ -19,6 +21,7 @@ import { MagicianDetailsComponent } from './magician-details/magician-details.co
     MagicianDetailsComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     MatTableModule,
     RouterModule.forRoot([

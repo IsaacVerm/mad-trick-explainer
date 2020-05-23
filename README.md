@@ -36,6 +36,10 @@ Tests are divided by component. For example there are `magician-list.spec.js` an
 
 The backend is provided by [json-server](https://github.com/typicode/json-server). It's just used to have something to do with the `HttpClientModule`.
 
+Run the `json-server`: `json-server --watch magician-names.json`.
+
+By default the server runs at `http://localhost:3000`.
+
 ## Material design
 
 Using Material design turned out to be real easy. Just reading the [getting started](https://material.angular.io/guide/getting-started) guide is sufficient to get up and running.
