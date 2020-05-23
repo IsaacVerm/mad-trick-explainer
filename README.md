@@ -34,11 +34,17 @@ Tests are divided by component. For example there are `magician-list.spec.js` an
 
 ## Backend
 
-The backend is provided by [json-server](https://github.com/typicode/json-server). It's just used to have something to do with the `HttpClientModule`.
+The backend is provided by [Flask](https://github.com/typicode/json-server). It's just used to have something to do with the `HttpClientModule`.
 
-Run the `json-server`: `json-server --watch magician-names.json`.
+To run the server:
 
-By default the server runs at `http://localhost:3000`.
+```
+cd backend;
+export FLASK_APP=magician-names.py;
+flask run --cert=adhoc;
+```
+
+The `--cert=adhoc` flag is [important](https://blog.miguelgrinberg.com/post/running-your-flask-application-over-https), it means we're using `https`.
 
 ## Material design
 
