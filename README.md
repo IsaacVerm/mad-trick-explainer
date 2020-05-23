@@ -12,7 +12,7 @@ Frontend built with [Angular](https://angular.io/) using [Typescript](https://ww
 
 ## Prototypes
 
-I'm planning on building multiple prototypes. In each prototype I try to use something new Angular offers. The first prototypes roughly follow the [try it Angular tutorial](https://angular.io/start). Between parentheses the main Angular feature used in the prototype is displayed.
+I'm planning on building multiple prototypes. In each prototype I try to use something new Angular offers. The first prototypes roughly follow the [try it Angular tutorial](https://angular.io/start).
 
 1) show tricks by magician ([components](https://angular.io/guide/architecture-components))
 2) detail page per magician (components)
@@ -68,7 +68,7 @@ Tests can be ran in two modes:
 - debug mode: `npx cypress open`
 - headless: `npx cypress run`
 
-Cypress' default browser is Electron. To be completely sure the test work in Chrome you can the `--browser=chrome` flag to `cypress run`. 
+Cypress' default browser is Electron. To be completely sure the test work in Chrome you can add the `--browser=chrome` flag to `cypress run`. 
 
 Tests are divided by component. For example there are `magician-list.spec.js` and `trick-list.spec.js` test files because there are also `magician-list` and `trick-list` components.
 
