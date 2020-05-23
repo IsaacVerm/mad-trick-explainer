@@ -1,4 +1,4 @@
-import { magicianNames } from './../magicians';
+import { MagiciansService } from './../magicians.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./magician-list.component.css'],
 })
 export class MagicianListComponent implements OnInit {
-  magicianNames = magicianNames;
+  magicianNames;
 
-  constructor() {}
+  constructor(
+    private magiciansService: MagiciansService
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.magicianNames = this.magiciansService.getMagicianNames();
+  }
 }

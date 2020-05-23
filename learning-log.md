@@ -43,3 +43,11 @@ Dependency injection is a coding pattern in which a class asks for dependencies 
 ### Pipe
 
 A way to write display-value transformations that you can declare in your HTML.
+
+## 23-05-2020
+
+Components consume services. 
+
+An injector creates dependencies, and maintains a container of dependency instances that it reuses if possible.
+
+A provider is an object that tells an injector how to obtain or create a dependency.
