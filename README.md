@@ -2,41 +2,54 @@
 
 A magician never reveals his secrets but this web app does exactly that.
 
+## Data sources
+
+Tricks were taken from [Wikipedia](https://en.wikipedia.org/wiki/List_of_magic_tricks) or [here](https://arresteddevelopment.fandom.com/wiki/G.O.B.%27s_illusions) in case of G.O.B.
+
+## Architecture
+
+Frontend built with [Angular](https://angular.io/) using [Typescript](https://www.typescriptlang.org/), backend built with [Flask](https://flask.palletsprojects.com/en/1.1.x/) in Python.
+
 ## Prototypes
 
-Planning on at first 4 prototypes:
+I'm planning on building multiple prototypes. In each prototype I try to use something new Angular offers. The first prototypes roughly follow the [try it Angular tutorial](https://angular.io/start). Between parentheses the main Angular feature used in the prototype is displayed.
 
-1) show tricks by magician
-2) have a detail page per magician
-3) fetch some tricks (e.g. from Wikipedia)
-4) let the user add his own magician
+1) show tricks by magician ([components](https://angular.io/guide/architecture-components))
+2) detail page per magician (components)
+3) fetch some tricks ([backend](https://angular.io/guide/http#setup-for-server-communication) and [services](https://angular.io/guide/architecture-services))
+4) add your own magician
 
-This roughly follows the [try it Angular tutorial](https://angular.io/start).
+## Setup
 
-## Scaffolding
+To run the web app yourself these requirements need to be fulfilled:
 
-Make sure to have `node`, `npm` and `ng` [installed](https://angular.io/guide/setup-local).
+- `node`, `npm` and `ng` are [installed](https://angular.io/guide/setup-local)
+- Javascript packages (`node_modules`) are installed
+- Python packages are installed
 
-Run `ng new mte`.
+Install Javascript packages:
 
-Serve with `ng serve` (from within the app).
+```
+cd mte/src;
+npm install;
+```
 
-Generate new component with `ng generate component`.
+Install Python packages:
 
-## Tests
+```
+cd backend;
+pip install -r requirements.txt
+```
 
-To run Cypress tests in debug mode: `npx cypress open`.
-To run the same tests without debugger: `npx cypress run --browser=chrome`. 
+## Running the web app
 
-In both cases make sure the application is running (`ng serve`).
+Run the Angular frontend:
 
-Tests are divided by component. For example there are `magician-list.spec.js` and `trick-list.spec.js` test files because there are also `magician-list` and `trick-list` components.
+```
+ng serve
+```
 
-## Backend
-
-The backend is provided by [Flask](https://github.com/typicode/json-server). It's just used to have something to do with the `HttpClientModule`.
-
-To run the server:
+Run the Flask backend:
 
 ```
 cd backend;
@@ -46,13 +59,32 @@ flask run --cert=adhoc;
 
 The `--cert=adhoc` flag is [important](https://blog.miguelgrinberg.com/post/running-your-flask-application-over-https), it means we're using `https`.
 
-[CORS] has been enabled.
+## Tests
 
-## Material design
+The only tests are E2E tests written in Cypress, there are no component or service tests.
 
-Using Material design turned out to be real easy. Just reading the [getting started](https://material.angular.io/guide/getting-started) guide is sufficient to get up and running.
+Tests can be ran in two modes:
 
-## Debugging
+- debug mode: `npx cypress open`
+- headless: `npx cypress run`
+
+Cypress' default browser is Electron. To be completely sure the test work in Chrome you can the `--browser=chrome` flag to `cypress run`. 
+
+Tests are divided by component. For example there are `magician-list.spec.js` and `trick-list.spec.js` test files because there are also `magician-list` and `trick-list` components.
+
+## Backend
+
+The backend is not the focus of this project. I chose Flask just to have something up and running quickly so I'd be able to play around with the Angular `HttpClientModule`.
+
+[CORS](https://flask-cors.readthedocs.io/en/latest/) has been enabled.
+
+## Frontend
+
+### Material design
+
+To make everything a bit more shiny out of the box, [Material design](https://material.io/design/) is used. Just reading this [getting started](https://material.angular.io/guide/getting-started) guide is more than enough at the beginning.
+
+## Augury
 
 There's a handy tool to debug an Angular app called [Augury](https://augury.rangle.io/).
 
@@ -60,6 +92,4 @@ There's a handy tool to debug an Angular app called [Augury](https://augury.rang
 
 Open questions are logged in the GitHub issues section.
 
-## Content of the app
 
-Tricks were taken from [Wikipedia](https://en.wikipedia.org/wiki/List_of_magic_tricks) or [here](https://arresteddevelopment.fandom.com/wiki/G.O.B.%27s_illusions) in case of G.O.B.
