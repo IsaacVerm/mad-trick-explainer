@@ -46,6 +46,8 @@ flask run --cert=adhoc;
 
 The `--cert=adhoc` flag is [important](https://blog.miguelgrinberg.com/post/running-your-flask-application-over-https), it means we're using `https`.
 
+[CORS] has been enabled.
+
 ## Material design
 
 Using Material design turned out to be real easy. Just reading the [getting started](https://material.angular.io/guide/getting-started) guide is sufficient to get up and running.
