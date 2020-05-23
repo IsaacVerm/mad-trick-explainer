@@ -16,6 +16,7 @@ export class MagiciansService {
   ) { }
 
   getMagicianNames() {
-    return this.http.get<MagicianNames>('https://127.0.0.1:5000/names');
+    // return this.http.get<MagicianNames>('./magician-names.json');
+    return this.http.get('assets/magician-names.json');
   }
 }
