@@ -45,6 +45,8 @@ pip install -r requirements.txt
 
 Configuration can be found in the `backend/config.py` file. This configuration is shared with the web app and Cypress tests using the `/config` route.
 
+The only exception to this is the `apiUrl` defined in `src/environments` in the Angular app. You somehow need to [specify](https://angular.io/guide/build) where to find the `/config` route.
+
 ## Running the web app
 
 Run the Angular frontend:

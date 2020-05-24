@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from './../environments/environment';
 
 export interface Config {
   webAppUrl: string;
@@ -16,6 +17,6 @@ export class ConfigService {
   ) { }
 
   getConfig() {
-    return this.http.get<Config>('https://127.0.0.1:5000/config');
+    return this.http.get<Config>(`${environment.apiUrl}/config`);
   }
 }
