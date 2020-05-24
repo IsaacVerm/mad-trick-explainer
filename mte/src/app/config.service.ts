@@ -17,6 +17,6 @@ export class ConfigService {
   ) { }
 
   getConfig() {
-    return this.http.get<Config>(`${environment.apiUrl}/config`);
+    return this.http.get<Config>(`${environment.configUrl}/config`);
   }
 }
