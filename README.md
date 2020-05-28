@@ -60,6 +60,7 @@ Run the Flask backend:
 ```
 cd backend;
 export FLASK_APP=backend.py;
+source venv/bin/activate;
 flask run --cert=adhoc;
 ```
 
