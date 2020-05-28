@@ -53,6 +53,7 @@ Run the Flask backend:
 
 ```
 cd backend;
+source venv/bin/activate;
 export FLASK_APP=magician-names.py;
 flask run --cert=adhoc;
 ```
