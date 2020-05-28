@@ -1,5 +1,5 @@
-import { MagiciansService } from './../magicians.service';
-import { MagicianNames } from './../magicians.service';
+import { Observable } from 'rxjs';
+import { MagiciansService, MagicianNames } from './../magicians.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,21 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./magician-list.component.css']
 })
 export class MagicianListComponent implements OnInit {
-  magicianNames;
+  magicianNames$: Observable<string[]>;
 
   constructor(
     private magiciansService: MagiciansService
     ) {}
 
   ngOnInit(): void {
-    this.getMagicianNames();
+    this.magicianNames$ = this.getMagicianNames();
   }
 
   getMagicianNames() {
-    this.magiciansService
-      .getMagicianNames()
-      .subscribe((response: MagicianNames) => {
-        this.magicianNames = response.names;
-      });
+    return this.magiciansService
+      .getMagicianNames();
   }
 }

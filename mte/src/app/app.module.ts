@@ -13,6 +13,9 @@ import { MagicianListComponent } from './magician-list/magician-list.component';
 import { TrickListComponent } from './trick-list/trick-list.component';
 import { MagicianDetailsComponent } from './magician-details/magician-details.component';
 
+import { ConfigService } from './config.service';
+import { MagiciansService } from './magicians.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +34,7 @@ import { MagicianDetailsComponent } from './magician-details/magician-details.co
     ]),
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [ConfigService, MagiciansService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
