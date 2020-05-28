@@ -47,7 +47,7 @@ Configuration can be found in the `backend/config.py` file. This configuration i
 
 The only exception to this is the `apiUrl` defined in `src/environments` in the Angular app. You somehow need to [specify](https://angular.io/guide/build) where to find the `/config` route.
 
-## Running the web app
+## Run the application
 
 Run the Angular frontend:
 
@@ -79,6 +79,10 @@ Cypress' default browser is Electron. To be completely sure the test work in Chr
 
 Tests are divided by component. For example there are `magician-list.spec.js` and `trick-list.spec.js` test files because there are also `magician-list` and `trick-list` components.
 
+### Docker
+
+Tests can be run using Docker as explained in [this post](https://www.cypress.io/blog/2019/05/02/run-cypress-with-a-single-docker-command).
+
 ## Backend
 
 The backend is not the focus of this project. I chose Flask just to have something up and running quickly so I'd be able to play around with the Angular `HttpClientModule`.
@@ -91,7 +95,7 @@ The backend is not the focus of this project. I chose Flask just to have somethi
 
 To make everything a bit more shiny out of the box, [Material design](https://material.io/design/) is used. Just reading this [getting started](https://material.angular.io/guide/getting-started) guide is more than enough at the beginning.
 
-## Augury
+## Debugging
 
 There's a handy tool to debug an Angular app called [Augury](https://augury.rangle.io/).
 
