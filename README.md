@@ -81,7 +81,29 @@ Tests are divided by component. For example there are `magician-list.spec.js` an
 
 ### Docker
 
-Tests can be run using Docker as explained in [this post](https://www.cypress.io/blog/2019/05/02/run-cypress-with-a-single-docker-command).
+Tests can be run using Docker as explained in [this post](https://www.cypress.io/blog/2019/05/02/run-cypress-with-a-single-docker-command). The Docker image used is the `cypress/included` one which [contains all system dependencies and the Cypress test runner].
+
+Cypress itself runs in a Docker container but the web app and backend are hosted locally. You still have to launch them yourself before launching the container.
+
+Make sure `ng serve` is ran with the `--disable-host-check`. If not [webpack](https://webpack.js.org/concepts/) will throw an error saying the [host header is invalid](https://stackoverflow.com/questions/43619644/i-am-getting-an-invalid-host-header-message-when-running-my-react-app-in-a-we).
+
+By default the `baseUrl` in `cypress.json` points to `localhost`. This won't do when your tests are running in a container. Solution is to [override localhost](https://glebbahmutov.com/blog/run-cypress-included-from-docker-container/) when running the container and specify `host.docker.internal`. This will points to the web app running locally.
+
+To run the tests:
+
+```
+docker run \
+-v $PWD:/e2e \
+-w /e2e \
+-e CYPRESS_baseUrl=http://host.docker.internal:4200 \
+cypress/included:4.7.0
+```
+
+`docker run` runs a process in a container. There's no need to download the `cypress/included` yourself. If it's not available, Docker will download it.
+
+[docker run](https://docs.docker.com/engine/reference/run/) `-v` doesn't let you specify the root `/` as a folder in the container so we specify `e2e`. `-w` specifies the working directory which contains the tests. The `CYPRESS_baseUrl` environment variable is the port used by default by `ng serve`. At the moment of writing `4.7.0` was the latest Cypress version available. Of course you can parametrize these as you want.
+
+At the moment tests hitting the Flask API still fail. To see exactly why I should first enable interactive mode to be able to see exactly what's going on in the browser console.
 
 ## Backend
 
