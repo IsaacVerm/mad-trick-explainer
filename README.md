@@ -41,6 +41,8 @@ cd backend;
 pip install -r requirements.txt
 ```
 
+If you want to run the Cypress tests in debug mode, you also have to install [XQuartz](https://www.xquartz.org/). It's important to note you have to [enable network connections](https://gist.github.com/cschiewek/246a244ba23da8b9f0e7b11a68bf3285) in `XQuartz`.
+
 ## Configuration
 
 Configuration can be found in the `backend/config.py` file. This configuration is shared with the web app and Cypress tests using the `/config` route.
@@ -81,7 +83,9 @@ Tests are divided by component. For example there are `magician-list.spec.js` an
 
 ### Docker
 
-Tests can be run using Docker as explained in [this post](https://www.cypress.io/blog/2019/05/02/run-cypress-with-a-single-docker-command). The Docker image used is the `cypress/included` one which [contains all system dependencies and the Cypress test runner].
+### headless mode
+
+Tests can be run using Docker as explained in [this post](https://www.cypress.io/blog/2019/05/02/run-cypress-with-a-single-docker-command). The Docker image used is the `cypress/included` one which [contains all system dependencies and the Cypress test runner](https://github.com/cypress-io/cypress-docker-images).
 
 Cypress itself runs in a Docker container but the web app and backend are hosted locally. You still have to launch them yourself before launching the container.
 
@@ -103,7 +107,51 @@ cypress/included:4.7.0
 
 [docker run](https://docs.docker.com/engine/reference/run/) `-v` doesn't let you specify the root `/` as a folder in the container so we specify `e2e`. `-w` specifies the working directory which contains the tests. The `CYPRESS_baseUrl` environment variable is the port used by default by `ng serve`. At the moment of writing `4.7.0` was the latest Cypress version available. Of course you can parametrize these as you want.
 
-At the moment tests hitting the Flask API still fail. To see exactly why I should first enable interactive mode to be able to see exactly what's going on in the browser console.
+At the moment tests hitting the Flask API still fail. To see exactly why I should first enable debug mode to be able to see exactly what's going on in the browser console.
+
+### debug mode
+
+To be able to debug you have to forward the screen from the Docker container to your local machine using [X11](https://en.wikipedia.org/wiki/X_Window_System).
+
+By default forwarding is [not allowed](https://www.businessnewsdaily.com/11035-how-to-use-x11-forwarding.html) on Mac. You have to explicitly add the IP address of your local machine to the list of allowed X11 hosts:
+
+```
+IP=$(ipconfig getifaddr en0);
+/usr/X11/bin/xhost + $IP;
+```
+
+A confirmation message is sent upon completion but you can also check yourself if the IP was properly set with `echo $IP`.
+
+Now the first thing to do is to set the `DISPLAY` variable with `DISPLAY=$IP:0`.
+
+Next to exporting the `DISPLAY` environment variable, to run in debug mode you also have to add some more arguments in comparison with headless mode:
+
+- `-v /tmp/.X11-unix:/tmp/.X11-unix \`: use the X11 socket file
+- `-e DISPLAY`
+- `--entrypoint cypress {image} open --project`
+
+[X11 uses a path to connect](https://unix.stackexchange.com/questions/196677/what-is-tmp-x11-unix) instead of an address and port.
+
+I checked the `cypress/include` images [README](https://github.com/cypress-io/cypress-docker-images/blob/master/included/README.md) and Dockerfile but couldn't trace down where the `DISPLAY` environment variable is used exactly.
+
+The default entrypoint for the `cypress/include` image is `cypress run`. We want to debug with `cypress open` so the entrypoint has to be [overriden](https://github.com/cypress-io/cypress-docker-images/blob/master/included/README.md#entry). `--project .`  makes sure Cypress (which is installed globally) points to [the working directory specified](https://docs.cypress.io/guides/guides/command-line.html#cypress-open-project-lt-project-path-gt).
+
+Putting it all together, the following command runs the tests in debug mode with the basic configuration of the apps:
+
+```
+docker run \
+  -v $PWD:/e2e \
+  -v /tmp/.X11-unix:/tmp/.X11-unix \
+  -w /e2e \
+  -e DISPLAY \
+  -e CYPRESS_baseUrl=http://host.docker.internal:4200 \
+  --entrypoint cypress \
+  cypress/included:4.7.0 open --project .
+```
+
+For some kind of reason this still only works when running this in `Terminal` instead of in the `VSCode` terminal. Both run `bash` however. So make sure to run the command above in a separate terminal.
+
+It's very unstable. When opening the `Chrome DevTools` the screen crashes more often than not. According to [GitHub](https://github.com/XQuartz/xorg-server) the latest commit happend in September 2016 so it's fair to say the project is not under active development. 
 
 ## Backend
 
