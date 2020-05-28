@@ -149,8 +149,6 @@ docker run \
   cypress/included:4.7.0 open --project .
 ```
 
-For some kind of reason this still only works when running this in `Terminal` instead of in the `VSCode` terminal. Both run `bash` however. So make sure to run the command above in a separate terminal.
-
 It's very unstable. When opening the `Chrome DevTools` the screen crashes more often than not. According to [GitHub](https://github.com/XQuartz/xorg-server) the latest commit happend in September 2016 so it's fair to say the project is not under active development. 
 
 ## Backend
