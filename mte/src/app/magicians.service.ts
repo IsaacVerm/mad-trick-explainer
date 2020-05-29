@@ -1,9 +1,10 @@
-import { magicianNames } from './magicians';
-import { ConfigService } from './config.service';
-import { Config } from './config.service'
-import { Injectable } from '@angular/core';
+import { map, switchMap } from 'rxjs/operators';
+
 import { HttpClient } from '@angular/common/http';
-import { switchMap, map } from 'rxjs/operators';
+import { Injectable } from '@angular/core';
+
+import { Config, ConfigService } from './config.service';
+import { magicianNames } from './magicians';
 
 export interface MagicianNames {
   names: string[];
@@ -26,7 +27,7 @@ export class MagiciansService {
     return this.config.getConfig().pipe(
       switchMap(config => {
         const apiUrl = config.apiUrl;
-        return this.http.get<MagicianNames>(`${apiUrl}/names`).pipe(
+        return this.http.get<MagicianNames>(`/api/names`).pipe(
           map(response => response.names)
         );
       })
