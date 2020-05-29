@@ -171,7 +171,7 @@ There's a handy tool to debug an Angular app called [Augury](https://augury.rang
 
 [GitHub Actions](https://help.github.com/en/actions) is used as CI. Cypress offers some predefined actions with corresponding [examples](https://github.com/cypress-io/github-action#basic).
 
-Workflows are defined in the `.github/workflows` folder.
+Workflows are defined in the `.github/workflows` folder. Basic usage for Cypress is explained [here](https://www.cypress.io/blog/2019/11/20/drastically-simplify-your-testing-with-cypress-github-action/). I needed to set some extras like the working directory for which I found [this tutorial](https://andreybleme.com/2020-02-29/continuous-Integration-with-github-actions-and-cypress-end-to-end-tests/) quite insightful.
 
 ## Questions
 
