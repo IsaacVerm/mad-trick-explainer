@@ -6,6 +6,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
+      - name: Install packages
+        run: npm install
       - name: Serve web app
         run: npm start
         working-directory: ./mte
