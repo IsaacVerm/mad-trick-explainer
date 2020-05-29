@@ -167,6 +167,12 @@ To make everything a bit more shiny out of the box, [Material design](https://ma
 
 There's a handy tool to debug an Angular app called [Augury](https://augury.rangle.io/).
 
+## CI
+
+[GitHub Actions](https://help.github.com/en/actions) is used as CI. Cypress offers some predefined actions with corresponding [examples](https://github.com/cypress-io/github-action#basic).
+
+Workflows are defined in the `.github/workflows` folder.
+
 ## Questions
 
 Open questions are logged in the GitHub issues section.
