@@ -4,7 +4,6 @@
 
 export const environment = {
   production: false,
-  configUrl: 'http://127.0.0.1:5000'
 };
 
 /*
