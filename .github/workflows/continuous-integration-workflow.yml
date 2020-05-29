@@ -6,26 +6,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - name: Install packages and serve web app
-        run: |
-          npm install
-          npm start
-        working-directory: ./mte
       - name: Cypress run
         uses: cypress-io/github-action@v1
-
-
-name: End-to-end tests
-on: [push]
-jobs:
-  cypress-run:
-    runs-on: ubuntu-16.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-      - name: Cypress run
-        uses: cypress-io/github-action@v1
-        working-directory: cypress
+        working-directory: ./cypress
         with:
           start: npm start
-          working-directory: mte
+          working-directory: ./mte
