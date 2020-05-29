@@ -6,7 +6,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
+      - name: Serve web app
+        run: npm start
+        working-directory: ./mte
       - name: Cypress run
         uses: cypress-io/github-action@v1
-        with:
-          start: npm start
