@@ -6,10 +6,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - name: Install packages
-        run: npm install
-      - name: Serve web app
-        run: npm start
+      - name: Install packages and serve web app
+        run: |
+          npm install
+          npm start
         working-directory: ./mte
       - name: Cypress run
         uses: cypress-io/github-action@v1
