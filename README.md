@@ -173,6 +173,8 @@ The application is deployed on Firebase. A project `mad-trick-explainer` needs t
 
 Deploy: `ng deploy`. 
 
+The app is deployed at [this address](https://mad-trick-explainer.web.app/trick-list).
+
 ## Questions
 
 Open questions are logged in the GitHub issues section.
