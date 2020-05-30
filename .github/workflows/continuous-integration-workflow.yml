@@ -6,18 +6,8 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Install dependencies
-        uses: cypress-io/github-action@v1
-        with:
-          # just perform install
-          runTests: false
-      - name: Run e2e tests
-        uses: cypress-io/github-action@v1
-        with:
-          start: npm start
-          working-directory: mte
-          wait-on: 'http://localhost:4200'
-        with:
-          # we have already installed all dependencies above
-          install: false
-          # Cypress tests and config file are in "e2e" folder
-          working-directory: cypress
+        run: npm install
+        working-directory: mte
+      - name: Serve app in background
+        run: npm start-background
+        working-directory: mte
