@@ -13,5 +13,6 @@ jobs:
         working-directory: mte
       - name: Cypress run
         uses: cypress-io/github-action@v1
+        working-directory: cypress
         with:
           wait-on: 'http://localhost:4200'
