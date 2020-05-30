@@ -173,6 +173,8 @@ There's a handy tool to debug an Angular app called [Augury](https://augury.rang
 
 Workflows are defined in the `.github/workflows` folder. Basic usage for Cypress is explained [here](https://www.cypress.io/blog/2019/11/20/drastically-simplify-your-testing-with-cypress-github-action/). I needed to set some extras like the working directory for which I found [this tutorial](https://andreybleme.com/2020-02-29/continuous-Integration-with-github-actions-and-cypress-end-to-end-tests/) quite insightful.
 
+Since we're using a monorepo, [this guide](https://github.com/bahmutov/cypress-gh-action-monorepo) is useful too to set the `working-directory`.
+
 ## Questions
 
 Open questions are logged in the GitHub issues section.
