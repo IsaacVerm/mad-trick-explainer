@@ -167,6 +167,12 @@ To make everything a bit more shiny out of the box, [Material design](https://ma
 
 There's a handy tool to debug an Angular app called [Augury](https://augury.rangle.io/).
 
+## Deployment
+
+The application is deployed on Firebase. A project `mad-trick-explainer` needs to be created manually in the Firebase console.
+
+Deploy: `ng deploy`. 
+
 ## Questions
 
 Open questions are logged in the GitHub issues section.
