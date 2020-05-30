@@ -10,9 +10,12 @@ jobs:
         with:
           # just perform install
           runTests: false
-          start: npm start
       - name: Run e2e tests
         uses: cypress-io/github-action@v1
+        with:
+          start: npm start
+          working-directory: mte
+          wait-on: 'http://localhost:4200'
         with:
           # we have already installed all dependencies above
           install: false
