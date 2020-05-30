@@ -11,3 +11,7 @@ jobs:
       - name: Serve app in background
         run: npm start
         working-directory: mte
+      - name: Cypress run
+        uses: cypress-io/github-action@v1
+        with:
+          wait-on: 'http://localhost:4200'
