@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "mad-trick-explainer": {
+      "hosting": {
+        "mte": [
+          "mad-trick-explainer"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "mte",
+      "public": "dist/mte",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}
