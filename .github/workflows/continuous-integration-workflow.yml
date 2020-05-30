@@ -9,5 +9,5 @@ jobs:
         run: npm install
         working-directory: mte
       - name: Serve app in background
-        run: npm start-background
+        run: npm start
         working-directory: mte
