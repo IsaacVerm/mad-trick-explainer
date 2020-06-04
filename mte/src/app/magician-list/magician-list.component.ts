@@ -1,6 +1,9 @@
 import { Observable } from 'rxjs';
-import { MagiciansService, MagicianNames } from './../magicians.service';
+
 import { Component, OnInit } from '@angular/core';
+
+import { MagiciansService } from '../magicians.service';
+import { Magician } from '../models/app.model';
 
 @Component({
   selector: 'app-magician-list',
@@ -8,18 +11,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./magician-list.component.css']
 })
 export class MagicianListComponent implements OnInit {
-  magicianNames$: Observable<string[]>;
+  magicians$: Observable<Magician[]>;
 
   constructor(
     private magiciansService: MagiciansService
     ) {}
 
   ngOnInit(): void {
-    this.magicianNames$ = this.getMagicianNames();
+    this.magicians$ = this.getMagicians();
   }
 
-  getMagicianNames() {
+  getMagicians() {
     return this.magiciansService
-      .getMagicianNames();
+      .getMagicians();
   }
 }

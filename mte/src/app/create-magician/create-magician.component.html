@@ -1,0 +1,9 @@
+<h1>Create Magician</h1>
+<form #magicanForm="ngForm">
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput type="text" name="name" [(ngModel)]="model.name">
+  </mat-form-field>
+</form>
+
+{{ model | json}}

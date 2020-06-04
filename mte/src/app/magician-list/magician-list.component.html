@@ -1,7 +1,13 @@
+
 <h1>Magicians</h1>
 
-<ul>
-  <li *ngFor="let name of magicianNames$ | async; index as magicianId">
-    <a [routerLink]="['/magicians', magicianId]">{{ name }}</a>
-  </li>
-</ul>
+<mat-list>
+  <mat-list-item class="mat-elevation-z1" *ngFor="let magician of (magicians$ | async); index as magicianId" [routerLink]="['/magicians', magicianId]">
+    {{ magician.name }}
+  </mat-list-item>
+</mat-list>
+
+<button mat-fab class="fab-button" color="primary" routerLink="/create-magician">
+  <mat-icon>add</mat-icon>
+</button>
+
