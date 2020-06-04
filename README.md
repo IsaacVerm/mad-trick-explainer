@@ -38,6 +38,7 @@ Install Python packages:
 
 ```
 cd backend;
+source venv/bin/activate;
 pip install -r requirements.txt
 ```
 
@@ -185,6 +186,10 @@ The backend hasn't been deployed on Firebase but on Heroku. There's multiple rea
 - you're [required to enable billing](https://medium.com/firebase-developers/hosting-flask-servers-on-firebase-from-scratch-c97cfb204579), this seems kind of tricky
 
 > To use Cloud Run with Firebase Hosting you currently need billing enabled, which requires putting a credit card on file. However! That doesn’t mean you’re going to get charged. Cloud Run comes with a free tier. You’ll likely operate in the free tier unless you are using it on a production site or sending large amounts of traffic to your site all month long.
+
+Deployment is fairly easy with [this tutorial](https://stackabuse.com/deploying-a-flask-application-to-heroku/).
+
+Only problem is we use a monorepo so the `backend` part with the `Procfile` isn't in the root of the repo. To solve this you can use [git subtree](https://coderwall.com/p/ssxp5q/heroku-deployment-without-the-app-being-at-the-repo-root-in-a-subfolder).
 
 ## Questions
 
