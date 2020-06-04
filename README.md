@@ -38,6 +38,7 @@ Install Python packages:
 
 ```
 cd backend;
+source venv/bin/activate;
 pip install -r requirements.txt
 ```
 
@@ -169,11 +170,53 @@ There's a handy tool to debug an Angular app called [Augury](https://augury.rang
 
 ## Deployment
 
-The application is deployed on Firebase. A project `mad-trick-explainer` needs to be created manually in the Firebase console.
+### Angular frontend
+
+The web application is deployed on Firebase. A project `mad-trick-explainer` needs to be created manually in the Firebase console.
 
 Deploy: `ng deploy`. 
 
 The app is deployed at [this address](https://mad-trick-explainer.web.app/trick-list).
+
+### Flask backend
+
+The backend hasn't been deployed on Firebase but on Heroku. There's multiple reasons for this:
+
+- I deployed [Flask apps on Heroku](https://github.com/IsaacVerm/postcards-backend) in the past
+- you're [required to enable billing](https://medium.com/firebase-developers/hosting-flask-servers-on-firebase-from-scratch-c97cfb204579), this seems kind of tricky
+
+> To use Cloud Run with Firebase Hosting you currently need billing enabled, which requires putting a credit card on file. However! That doesn’t mean you’re going to get charged. Cloud Run comes with a free tier. You’ll likely operate in the free tier unless you are using it on a production site or sending large amounts of traffic to your site all month long.
+
+Deployment is fairly easy with [this tutorial](https://stackabuse.com/deploying-a-flask-application-to-heroku/).
+
+To deploy the backend, you need to:
+
+- [install the Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli#download-and-install)
+- login to heroku
+- [add a Heroku remote](https://devcenter.heroku.com/articles/git#for-an-existing-heroku-app)
+- push your code to the Heroku remote
+
+To login to Heroku:
+
+```
+heroku login -i
+```
+
+Adding a remote means we'll push our Git repository to somewhere else than GitHub. To add a Heroku remote:
+
+```
+heroku git:remote -a mte-backend
+```
+
+The name of the app on Heroku is `mte-backend`.
+
+Now you can deploy with:
+
+```
+git subtree push --prefix backend heroku master
+```
+
+Only problem is we use a monorepo so the `backend` part with the `Procfile` isn't in the root of the repo. To solve this you can use [git subtree](https://coderwall.com/p/ssxp5q/heroku-deployment-without-the-app-being-at-the-repo-root-in-a-subfolder).
 
 ## Questions
 
