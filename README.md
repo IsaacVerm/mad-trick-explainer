@@ -88,6 +88,8 @@ It's possible to change the app targeted (locally served app or the one deployed
 npx cypress open --config baseUrl={url}
 ```
 
+By default the app targeted is the one deployed on Firebase. To change to localhost, put `http://localhost:4200/` as `baseUrl` in the `cypress.json` file.
+
 ### Docker
 
 ### headless mode
