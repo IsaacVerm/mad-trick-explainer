@@ -2,8 +2,8 @@
 <h1>Magicians</h1>
 
 <mat-list>
-  <mat-list-item class="mat-elevation-z1" *ngFor="let name of magicianNames$ | async; index as magicianId" [routerLink]="['/magicians', magicianId]">
-    {{ name }}
+  <mat-list-item class="mat-elevation-z1" *ngFor="let magician of (magicians$ | async); index as magicianId" [routerLink]="['/magicians', magicianId]">
+    {{ magician.name }}
   </mat-list-item>
 </mat-list>
 
