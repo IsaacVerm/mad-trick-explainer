@@ -21,5 +21,3 @@ jobs:
         firebase deploy --project mad-trick-explainer --token ${{ secrets.FIREBASE_TOKEN }}
     - name: run Cypress tests
       uses: cypress-io/github-action@v1
-      with:
-        working-directory: cypress
