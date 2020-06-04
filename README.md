@@ -224,6 +224,32 @@ git subtree push --prefix backend heroku master
 
 Only problem is we use a monorepo so the `backend` part with the `Procfile` isn't in the root of the repo. To solve this you can use [git subtree](https://coderwall.com/p/ssxp5q/heroku-deployment-without-the-app-being-at-the-repo-root-in-a-subfolder).
 
+## GitHub actions
+
+### Firebase
+
+Using [this tutorial](https://dev.to/gautemeekolsen/getting-started-with-github-actions-ci-cd-firebase-deploy-5g87) I was able to automatically deploy to Firebase in a GitHub action.
+
+First [install the Firebase CLI](https://firebase.google.com/docs/cli#mac-linux-npm):
+
+```
+npm install -g firebase-tools
+```
+
+Using the Firebase CLI you can generate a token. You have to set this token as a secret for GitHub to use. Do this in the `settings > secrets` section of the repository itself (so not in your profile page as I thought at first).
+
+Generate the token:
+
+```
+firebase login:ci
+```
+
+If you don't check in the `.firebaserc` file (like it's done in this project), you should [expliticly set](https://stackoverflow.com/questions/43817521/firebase-cli-no-project-is-currently-active) the `--project` flag for `firebase deploy`.
+
+### Heroku
+
+Based on [this tutorial](https://mikecoutermarsh.com/github-actions-deploy-to-heroku/) and [this action](https://github.com/AkhileshNS/heroku-deploy) I was not able to set up an automated Heroku deployment. Since the backend rarely changes anyways, I decided not to prioritize this.
+
 ## Questions
 
 Open questions are logged in the GitHub issues section.
