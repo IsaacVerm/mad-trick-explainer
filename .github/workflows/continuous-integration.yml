@@ -1,0 +1,21 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: compile Angular app
+      working-directory: ./mte
+      run: |
+        npm install
+        npm run build
+    - name: deploy compiled app to Firebase
+      working-directory: ./mte
+      run: |
+        sudo npm install -g firebase-tools
+        firebase deploy --project mad-trick-explainer --token ${{ secrets.FIREBASE_TOKEN }}
