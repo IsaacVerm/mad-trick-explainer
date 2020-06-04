@@ -1,0 +1,10 @@
+mat-list-item:hover {
+  cursor: pointer;
+}
+
+
+.fab-button {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+}
