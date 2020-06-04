@@ -8,7 +8,7 @@ import { Magician } from '../models/app.model';
   styleUrls: ['./create-magician.component.css']
 })
 export class CreateMagicianComponent implements OnInit {
-  model: Magician;
+  model: Partial<Magician> = {};
 
   constructor() { }
 
