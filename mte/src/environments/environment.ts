@@ -4,6 +4,9 @@
 
 export const environment = {
   production: false,
+  backend: {
+    baseURL: 'https://mte-backend.herokuapp.com'
+  }
 };
 
 /*
