@@ -19,3 +19,5 @@ jobs:
       run: |
         sudo npm install -g firebase-tools
         firebase deploy --project mad-trick-explainer --token ${{ secrets.FIREBASE_TOKEN }}
+    - name: run Cypress tests
+      uses: cypress-io/github-action@v1
