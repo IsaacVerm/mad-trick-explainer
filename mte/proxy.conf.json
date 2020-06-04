@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "https://localhost:5000",
+    "target": "https://mte-backend.herokuapp.com/",
     "secure": false,
     "changeOrigin": true,
     "pathRewrite": {"^/api" : ""}
