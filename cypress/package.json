@@ -1,12 +1,10 @@
 {
   "name": "cypress",
   "version": "0.0.0",
-  "scripts": {
-  },
+  "scripts": {},
   "private": true,
   "dependencies": {
     "cypress": "^4.6.0"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
