@@ -189,6 +189,33 @@ The backend hasn't been deployed on Firebase but on Heroku. There's multiple rea
 
 Deployment is fairly easy with [this tutorial](https://stackabuse.com/deploying-a-flask-application-to-heroku/).
 
+To deploy the backend, you need to:
+
+- [install the Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli#download-and-install)
+- login to heroku
+- [add a Heroku remote](https://devcenter.heroku.com/articles/git#for-an-existing-heroku-app)
+- push your code to the Heroku remote
+
+To login to Heroku:
+
+```
+heroku login -i
+```
+
+Adding a remote means we'll push our Git repository to somewhere else than GitHub. To add a Heroku remote:
+
+```
+heroku git:remote -a mte-backend
+```
+
+The name of the app on Heroku is `mte-backend`.
+
+Now you can deploy with:
+
+```
+git subtree push --prefix backend heroku master
+```
+
 Only problem is we use a monorepo so the `backend` part with the `Procfile` isn't in the root of the repo. To solve this you can use [git subtree](https://coderwall.com/p/ssxp5q/heroku-deployment-without-the-app-being-at-the-repo-root-in-a-subfolder).
 
 ## Questions
