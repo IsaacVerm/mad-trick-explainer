@@ -1,13 +1,17 @@
-from flask import Flask
+from flask import Flask, jsonify
 from flask_cors import CORS
 from config import web_app_url, api_url
 
 app = Flask(__name__)
 CORS(app)
 
-@app.route("/names")
-def names():
-    return {"names": ["Harry Houdini", "G.O.B", "Robert Harbin"]}
+@app.route("/magicians")
+def magicians():
+    return jsonify([
+      { "name": "Harry Houdini" },
+      { "name": "G.O.B" },
+      { "name": "Robert Harbin" }
+      ])
 
 @app.route("/config")
 def config():
