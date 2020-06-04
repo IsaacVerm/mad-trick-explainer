@@ -1,20 +1,16 @@
-import { RouterModule } from '@angular/router';
-import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import {
-  MatTableModule,
-} from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
-
-import { MagicianListComponent } from './magician-list/magician-list.component';
-import { TrickListComponent } from './trick-list/trick-list.component';
-import { MagicianDetailsComponent } from './magician-details/magician-details.component';
-
 import { ConfigService } from './config.service';
+import { MagicianDetailsComponent } from './magician-details/magician-details.component';
+import { MagicianListComponent } from './magician-list/magician-list.component';
 import { MagiciansService } from './magicians.service';
+import { TrickListComponent } from './trick-list/trick-list.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +27,7 @@ import { MagiciansService } from './magicians.service';
       { path: 'trick-list', component: TrickListComponent },
       { path: 'magician-list', component: MagicianListComponent },
       { path: 'magicians/:magicianId', component: MagicianDetailsComponent },
+      { path: '**', redirectTo: 'trick-list'},
     ]),
     BrowserAnimationsModule,
   ],
