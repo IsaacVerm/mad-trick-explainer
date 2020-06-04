@@ -9,7 +9,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { ConfigService } from './config.service';
 import { MagicianDetailsComponent } from './magician-details/magician-details.component';
 import { MagicianListComponent } from './magician-list/magician-list.component';
 import { MagiciansService } from './magicians.service';
@@ -38,7 +37,7 @@ import { TrickListComponent } from './trick-list/trick-list.component';
     ]),
     BrowserAnimationsModule,
   ],
-  providers: [ConfigService, MagiciansService],
+  providers: [MagiciansService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
