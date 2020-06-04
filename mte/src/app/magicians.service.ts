@@ -5,10 +5,7 @@ import { Injectable } from '@angular/core';
 
 import { Config, ConfigService } from './config.service';
 import { magicianNames } from './magicians';
-
-export interface MagicianNames {
-  names: string[];
-}
+import { Magician } from './models/app.model';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +16,7 @@ export class MagiciansService {
     private config: ConfigService
   ) { }
 
-  getMagicianNames() {
+  getMagicians() {
     // getConfig() returns an observable
     // this observable is modified a bit before it's passed on
     // https://medium.com/@luukgruijs/understanding-creating-and-subscribing-to-observables-in-angular-426dbf0b04a3
@@ -27,9 +24,7 @@ export class MagiciansService {
     return this.config.getConfig().pipe(
       switchMap(config => {
         const apiUrl = config.apiUrl;
-        return this.http.get<MagicianNames>(`/api/names`).pipe(
-          map(response => response.names)
-        );
+        return this.http.get<Magician[]>(`/api/magicians`);
       })
     );
   }
