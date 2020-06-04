@@ -170,6 +170,12 @@ There's a handy tool to debug an Angular app called [Augury](https://augury.rang
 
 ## Deployment
 
+### Proxy
+
+In the beginning of this project the Flask backend could only be served locally. To [avoid having to take time out to solve CORS issues](https://stackoverflow.com/a/53587709), it made sense at the time to [make use of a proxy](https://github.com/IsaacVerm/mad-trick-explainer/pull/12). This proxy is no longer necessary since now both in local development and production API requests are directed to Heroku. The overhead of using a remote backend over a locally served one is minimal. Especially since the main focus of this project is to focus on the Angular frontend and not the Flask backend.
+
+The backend url itself is [configured](https://stackoverflow.com/a/56478645) using [environments](https://angular.io/guide/build#configuring-application-environments).
+
 ### Angular frontend
 
 The web application is deployed on Firebase. A project `mad-trick-explainer` needs to be created manually in the Firebase console.
