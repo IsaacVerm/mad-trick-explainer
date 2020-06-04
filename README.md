@@ -258,6 +258,10 @@ If you don't check in the `.firebaserc` file (like it's done in this project), y
 
 Based on [this tutorial](https://mikecoutermarsh.com/github-actions-deploy-to-heroku/) and [this action](https://github.com/AkhileshNS/heroku-deploy) I was not able to set up an automated Heroku deployment. Since the backend rarely changes anyways, I decided not to prioritize this.
 
+### Cypress
+
+Since I'm using a [monorepo](https://github.com/marketplace/actions/cypress-io#working-directory), it's necessary to explicitly specify the working directory.
+
 ## Questions
 
 Open questions are logged in the GitHub issues section.
