@@ -82,6 +82,12 @@ Cypress' default browser is Electron. To be completely sure the test work in Chr
 
 Tests are divided by component. For example there are `magician-list.spec.js` and `trick-list.spec.js` test files because there are also `magician-list` and `trick-list` components.
 
+It's possible to change the app targeted (locally served app or the one deployed on Firebase) by [configuring](https://docs.cypress.io/guides/guides/command-line.html#cypress-run-config-lt-config-gt):
+
+```
+npx cypress open --config baseUrl={url}
+```
+
 ### Docker
 
 ### headless mode
@@ -182,7 +188,7 @@ The web application is deployed on Firebase. A project `mad-trick-explainer` nee
 
 Deploy: `ng deploy`. 
 
-The app is deployed at [this address](https://mad-trick-explainer.web.app/trick-list).
+The app is deployed at [this address](https://mad-trick-explainer.web.app).
 
 ### Flask backend
 
