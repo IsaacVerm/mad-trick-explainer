@@ -6,14 +6,14 @@ import { assertUrl as assertUrlDetails } from '../support/helpers/components/mag
 
 describe('magician-list', () => {
     it('lists magicians', () => {
-        const magician = 'Harry Houdini';
+        const magicianName = 'Harry Houdini';
         const magicianId = 0
 
         cy.visit('')
 
         openMagicianList()
         assertUrlList();
-        assertMagicianInList(magician);
+        assertMagicianInList(magicianName);
         
         // no extra assertions, just checking if you can navigate
         openMagicianDetails(magicianId)
