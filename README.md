@@ -10,6 +10,8 @@ The app is deployed [here](https://mad-trick-explainer.web.app).
 
 To organise the documentation, I based myself on [this article](https://documentation.divio.com/). The gist of it is you have to split your documentation based on what it tries to accomplish. There is a total of four distinct types of documentation. The first type are explanations which try to answer WHY things were done the way they're done. The second type are how-to guides. These are more like recipes. If you want a quick answer HOW to solve a specific problem, this is where you should look. The third type are tutorials. These will try to seduce you to use the app. They answer WHY in the sense of, why should I even bother with this? The fourth and last type are references. These just describe.
 
+The documentation can be found in the [doc](/doc) folder.
+
 ## Prototypes
 
 I'm planning on building multiple prototypes. In each prototype I try to use something new Angular offers. The first prototypes roughly follow the [try it Angular tutorial](https://angular.io/start) and have already been implemented.
