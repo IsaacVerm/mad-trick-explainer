@@ -43,7 +43,7 @@ Disclaimer: it's rather unstable. When opening the `Chrome DevTools` the screen 
 
 The following steps assume `XQuartz` has been installed as explained [here](../how-to/setup-local-environment.md) in the tests section.
 
-### add IP address local machine to list of allowed X11 hosts
+### Add IP address local machine to list of allowed X11 hosts
 
 By default forwarding is [not allowed](https://www.businessnewsdaily.com/11035-how-to-use-x11-forwarding.html) on Mac. You have to explicitly add the IP address of your local machine to the list of allowed X11 hosts:
 
@@ -54,7 +54,7 @@ IP=$(ipconfig getifaddr en0);
 
 A confirmation message is sent upon completion but you can also check yourself if the IP was properly set with `echo $IP`.
 
-### set `DISPLAY` variable
+### Set `DISPLAY` variable
 
 `DISPLAY=$IP:0`
 

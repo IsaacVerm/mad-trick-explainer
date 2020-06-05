@@ -1,4 +1,4 @@
-# Why deploy backend on Heroku?
+# Why deploy the backend on Heroku?
 
 Since the frontend is already deployed on Firebase, it would seem to make sense to display the backend there as well. However, I opted for Heroku here. There's multiple reasons for this:
 

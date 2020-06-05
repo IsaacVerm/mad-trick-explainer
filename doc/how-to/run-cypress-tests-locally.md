@@ -9,7 +9,7 @@ Tests can be run in two different modes:
 
 These modes have some options which are relevant to both modes. One is the `--browser` option. Cypress' default browser is Electron. To be completely sure the test work in Chrome you can add the `--browser=chrome` flag.
 
-## target local app
+## Target local app
 
 By default the app targeted is the `baseUrl` defined in the `cypress.json` file. This `baseUrl` is set to the app deployed on Firebase. To target the application running locally, you can either:
 
@@ -18,7 +18,7 @@ By default the app targeted is the `baseUrl` defined in the `cypress.json` file.
 
 `localhost:4200` is the default address used by `ng serve`. It's recommended to use the [command line override](https://docs.cypress.io/guides/references/configuration.html#Command-Line) since you want to avoid checking the `cypress.json` into version control with the wrong `baseUrl` set.
 
-## run test
+## Run tests
 
 Either with the Test Runner:
 
