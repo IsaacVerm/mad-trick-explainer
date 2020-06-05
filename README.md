@@ -2,6 +2,10 @@
 
 A magician never reveals his secrets but this web app does exactly that.
 
+## How the documentation is organised
+
+To organise the documentation, I based myself on [this article](https://documentation.divio.com/). The gist of it is you have to split your documentation based on what it tries to accomplish. From the 4 types of documentation described by the article I only use three at the moment. The first type used are explanations which try to answer WHY things were done the way they're done. The second type are how-to guides. These are more like recipes. If you want a quick answer HOW to solve a specific problem, this is where you should look. The third and last type are tutorials. These will try to seduce you to use the app. They answer WHY in the sense of, why should I even bother with this?
+
 ## Data sources
 
 Tricks were taken from [Wikipedia](https://en.wikipedia.org/wiki/List_of_magic_tricks) or [here](https://arresteddevelopment.fandom.com/wiki/G.O.B.%27s_illusions) in case of G.O.B.
