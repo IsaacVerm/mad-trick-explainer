@@ -1,5 +1,9 @@
 name: CI
 
+# If you don't check in the `.firebaserc` file (like it's done in this project)
+# you should expliticly set the `--project` flag for `firebase deploy`
+# https://stackoverflow.com/questions/43817521/firebase-cli-no-project-is-currently-active
+
 on: [push]
 
 jobs:
