@@ -1,0 +1,3 @@
+# Why is the backend not deployed automatically?
+
+Since the [frontend is deployed to Firebase in CI](https://github.com/IsaacVerm/mad-trick-explainer/pull/20), it would make sense to automatically deploy the backend as well. Sadly enough I wasn't able to make it work. Based on [this tutorial](https://mikecoutermarsh.com/github-actions-deploy-to-heroku/) and [this action](https://github.com/AkhileshNS/heroku-deploy) I was not able to set up an automated Heroku deployment. Since the backend rarely changes anyways, I decided not to prioritize this.
