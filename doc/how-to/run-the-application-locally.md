@@ -1,4 +1,4 @@
-# Run the application
+# Run the application locally
 
 These instructions assume your [local environment has been set up](setup-local-environment.md).
 
