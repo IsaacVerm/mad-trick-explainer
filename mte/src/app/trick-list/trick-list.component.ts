@@ -14,4 +14,8 @@ export class TrickListComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  showExplanation() {
+    window.alert('This table shows some popular tricks with their main characteristics.');
+  }
 }
