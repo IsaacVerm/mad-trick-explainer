@@ -22,4 +22,8 @@ export class TrickListComponent implements OnInit {
   showWarningLeaveSite() {
     window.alert('You will be redirected to another site.');
   }
+
+  addTrick(trickName) {
+    this.tricks.push({name: trickName});
+  }
 }

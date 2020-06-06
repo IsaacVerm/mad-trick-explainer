@@ -19,6 +19,10 @@ export function assertTrickInTable(trick) {
     cy.get('[data-cy="trick-list_table"]').should("contain", trick);
 } 
 
+export function assertTrickNotInTable(trick) {
+  cy.get('[data-cy="trick-list_table"]').should("not.contain", trick);
+} 
+
 export function setAlertStub() {
     // when the alert is displayed
     // we check if it's called with the right text
@@ -54,4 +58,12 @@ export function selectTrick(index) {
 
 export function assertOtherSiteText(stub) {
     expect(stub).to.be.calledWith(Cypress.sinon.match("another site"));
+}
+
+export function typeTrickNameInput(trickName) {
+    cy.get('[data-cy="trick-list_trick-name_input"]').type(trickName);
+}
+
+export function submitTrickName() {
+    cy.get('[data-cy="trick-list_trick-name_input"]').type("{enter}");
 }

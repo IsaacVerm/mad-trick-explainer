@@ -8,7 +8,10 @@ import {
   setAlertStub,
   assertTricksHaveWikipediaLinks,
   selectTrick,
-  assertOtherSiteText
+  assertOtherSiteText,
+  typeTrickNameInput,
+  submitTrickName,
+  assertTrickNotInTable,
 } from "../support/helpers/components/trick-list";
 
 describe('trick-list', () => {
@@ -35,7 +38,6 @@ describe('trick-list', () => {
         assertExplanationText(stub)
       });
     })
-
     it('opens link if you select trick name', () => {
       // only checking the first trick
       const indexTrick = 0
@@ -51,5 +53,20 @@ describe('trick-list', () => {
       selectTrick(indexTrick).then(() => {
         assertOtherSiteText(stub);
       });
+    })
+    it.only('adds trick', () => {
+      const trickName = 'I am new here'
+
+      cy.visit("/trick-list");
+
+      typeTrickNameInput(trickName);
+
+      submitTrickName();
+
+      assertTrickInTable(trickName);
+
+      cy.reload()
+
+      assertTrickNotInTable(trickName);
     })
 })
