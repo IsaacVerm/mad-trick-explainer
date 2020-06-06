@@ -3,6 +3,9 @@ import {
   assertColumnNamesTable,
   assertMagicianInTable,
   assertTrickInTable,
+  showExplanation,
+  assertExplanationText,
+  setAlertStub
 } from "../support/helpers/components/trick-list";
 
 describe('trick-list', () => {
@@ -19,5 +22,14 @@ describe('trick-list', () => {
         assertMagicianInTable(magician);
         // same goes for the tricks
         assertTrickInTable(trick)
+    })
+    it('shows explanation when asked for', () => {
+      const stub = setAlertStub();
+
+      cy.visit("/trick-list");
+
+      showExplanation().then(() => {
+        assertExplanationText(stub)
+      });
     })
 })
