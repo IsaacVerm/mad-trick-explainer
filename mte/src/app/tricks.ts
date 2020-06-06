@@ -6,7 +6,7 @@ export const tricks = [
            description:
              'a magician appears to catch a bullet fired directly at him or her ',
            synonyms: ['bullet trick', 'defying the bullets', 'gun trick'],
-           wikipediaLink: 'https://en.wikipedia.org/wiki/Bullet_catch',
+           link: 'https://en.wikipedia.org/wiki/Bullet_catch',
          },
          {
            name: 'Drill of Death',
@@ -14,7 +14,7 @@ export const tricks = [
            type: 'stage magic illusion',
            description: 'a performer appears to be impaled on a giant drill',
            synonyms: [],
-           wikipediaLink: 'https://en.wikipedia.org/wiki/Drill_of_Death',
+           link: 'https://en.wikipedia.org/wiki/Drill_of_Death',
          },
          {
            name: 'Floating match on card',
@@ -23,8 +23,7 @@ export const tricks = [
            description:
              'a magician causes the match to appear to float off the playing card.',
            synonyms: ['Cosmosis'],
-           wikipediaLink:
-             'https://en.wikipedia.org/wiki/Floating_match_on_card',
+           link: 'https://en.wikipedia.org/wiki/Floating_match_on_card',
          },
          {
            name: 'Three-card Monte',
