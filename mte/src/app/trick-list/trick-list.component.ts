@@ -18,4 +18,8 @@ export class TrickListComponent implements OnInit {
   showExplanation() {
     window.alert('This table shows some popular tricks with their main characteristics.');
   }
+
+  showWarningLeaveSite() {
+    window.alert('You will be redirected to another site.');
+  }
 }

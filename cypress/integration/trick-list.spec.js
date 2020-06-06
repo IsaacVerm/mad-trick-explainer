@@ -5,7 +5,10 @@ import {
   assertTrickInTable,
   showExplanation,
   assertExplanationText,
-  setAlertStub
+  setAlertStub,
+  assertTricksHaveWikipediaLinks,
+  selectTrick,
+  assertOtherSiteText
 } from "../support/helpers/components/trick-list";
 
 describe('trick-list', () => {
@@ -34,13 +37,19 @@ describe('trick-list', () => {
     })
 
     it('opens link if you select trick name', () => {
+      // only checking the first trick
+      const indexTrick = 0
+
+      const stub = setAlertStub();
+
       cy.visit("/trick-list");
 
       // its() doesn't work here because it looks for a property
       // https://docs.cypress.io/api/commands/its.html
       // properties = DOM, attributes = HTML, big difference!
-      cy.get('[data-cy="trick-list_trick_link"]')
-        .invoke('attr', 'href')
-        .should("contain", "https://en.wikipedia.org/wiki");
+      assertTricksHaveWikipediaLinks()
+      selectTrick(indexTrick).then(() => {
+        assertOtherSiteText(stub);
+      });
     })
 })

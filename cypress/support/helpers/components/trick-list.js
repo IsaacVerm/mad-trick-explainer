@@ -39,3 +39,19 @@ export function assertExplanationText(stub) {
     // https://docs.cypress.io/api/utilities/sinon.html#Syntax
     expect(stub).to.be.calledWith(Cypress.sinon.match("This table shows"));
 }
+
+export function assertTricksHaveWikipediaLinks() {
+    cy.get('[data-cy="trick-list_trick_link"]')
+      .invoke("attr", "href")
+      .should("contain", "https://en.wikipedia.org/wiki");
+}
+
+export function selectTrick(index) {
+    return cy.get('[data-cy="trick-list_trick_link"]')
+      .eq(index)
+      .click()
+}
+
+export function assertOtherSiteText(stub) {
+    expect(stub).to.be.calledWith(Cypress.sinon.match("another site"));
+}
