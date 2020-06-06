@@ -54,7 +54,7 @@ describe('trick-list', () => {
         assertOtherSiteText(stub);
       });
     })
-    it.only('adds trick', () => {
+    it('adds trick', () => {
       const trickName = 'I am new here'
 
       cy.visit("/trick-list");
