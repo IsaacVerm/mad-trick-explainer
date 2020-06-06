@@ -7,15 +7,13 @@
     <th>type</th>
     <th>description</th>
     <th>synonyms</th>
-    <th>link</th>
   </tr>
   <tr *ngFor="let trick of tricks">
-    <td>{{ trick.name }}</td>
+    <td><a data-cy="trick-list_trick_link" [href]="trick.link">{{ trick.name }}</a></td>
     <td>{{ trick.inventor }}</td>
     <td>{{ trick.type }}</td>
     <td>{{ trick.description }}</td>
     <td>{{ trick.synonyms }}</td>
-    <td>{{ trick.link }}</td>
   </tr>
 </table>
 

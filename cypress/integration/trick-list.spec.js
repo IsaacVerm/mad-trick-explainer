@@ -32,4 +32,15 @@ describe('trick-list', () => {
         assertExplanationText(stub)
       });
     })
+
+    it('opens link if you select trick name', () => {
+      cy.visit("/trick-list");
+
+      // its() doesn't work here because it looks for a property
+      // https://docs.cypress.io/api/commands/its.html
+      // properties = DOM, attributes = HTML, big difference!
+      cy.get('[data-cy="trick-list_trick_link"]')
+        .invoke('attr', 'href')
+        .should("contain", "https://en.wikipedia.org/wiki");
+    })
 })

@@ -9,7 +9,6 @@ export function assertColumnNamesTable() {
       .and("contain", "type")
       .and("contain", "description")
       .and("contain", "synonyms")
-      .and("contain", "link");
 }
 
 export function assertMagicianInTable(magician) {
