@@ -1,14 +1,23 @@
 <h1>Tricks</h1>
 
-<table mat-table [dataSource]="magicians">
-  <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef> Name </th>
-    <td mat-cell *matCellDef="let magician"> {{ magician.name }} </td>
-  </ng-container>
-  <ng-container matColumnDef="trick">
-    <th mat-header-cell *matHeaderCellDef> Trick </th>
-    <td mat-cell *matCellDef="let magician"> {{ magician.trick }} </td>
-  </ng-container>
-  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
-  <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+<table data-cy="trick-list_table">
+  <tr>
+    <th>name</th>
+    <th>inventor</th>
+    <th>type</th>
+    <th>description</th>
+    <th>synonym</th>
+  </tr>
+  <tr *ngFor="let trick of tricks">
+    <td><a data-cy="trick-list_trick_link" (click)="showWarningLeaveSite()" [href]="trick.link">{{ trick.name }}</a></td>
+    <td>{{ trick.inventor }}</td>
+    <td>{{ trick.type }}</td>
+    <td>{{ trick.description }}</td>
+    <td>{{ trick.synonyms | slice:0:1 }}</td>
+  </tr>
 </table>
+
+<button data-cy="trick-list_explanation_button" (click)="showExplanation()">Show explanation</button>
+
+<p>"Write the name of the trick and press enter."</p>
+<input data-cy="trick-list_trick-name_input" #trickName (keyup.enter)="addTrick(trickName.value)">
