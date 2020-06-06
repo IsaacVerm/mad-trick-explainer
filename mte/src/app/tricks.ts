@@ -5,7 +5,7 @@ export const tricks = [
            type: 'stage magic illusion',
            description:
              'a magician appears to catch a bullet fired directly at him or her ',
-           synonyms: ['bullet trick', 'defying the bullets', 'gun trick'],
+           synonyms: ['Bullet Trick', 'Defying the Bullets', 'Gun Trick'],
            link: 'https://en.wikipedia.org/wiki/Bullet_catch',
          },
          {

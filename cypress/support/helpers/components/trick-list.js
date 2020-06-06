@@ -8,7 +8,7 @@ export function assertColumnNamesTable() {
       .and("contain", "inventor")
       .and("contain", "type")
       .and("contain", "description")
-      .and("contain", "synonyms")
+      .and("contain", "synonym")
 }
 
 export function assertMagicianInTable(magician) {

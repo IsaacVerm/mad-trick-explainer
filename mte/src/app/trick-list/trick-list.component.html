@@ -6,14 +6,14 @@
     <th>inventor</th>
     <th>type</th>
     <th>description</th>
-    <th>synonyms</th>
+    <th>synonym</th>
   </tr>
   <tr *ngFor="let trick of tricks">
     <td><a data-cy="trick-list_trick_link" (click)="showWarningLeaveSite()" [href]="trick.link">{{ trick.name }}</a></td>
     <td>{{ trick.inventor }}</td>
     <td>{{ trick.type }}</td>
     <td>{{ trick.description }}</td>
-    <td>{{ trick.synonyms }}</td>
+    <td>{{ trick.synonyms | slice:0:1 }}</td>
   </tr>
 </table>
 
