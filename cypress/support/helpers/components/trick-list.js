@@ -3,15 +3,19 @@ export function assertUrl() {
 }
 
 export function assertColumnNamesTable() {
-    cy.get("tr[mat-header-row]")
-      .should("contain", "Name")
-      .should("contain", "Trick");
+    cy.get('[data-cy="trick-list_table"] th')
+      .should("contain", "name")
+      .and("contain", "inventor")
+      .and("contain", "type")
+      .and("contain", "description")
+      .and("contain", "synonyms")
+      .and("contain", "link");
 }
 
 export function assertMagicianInTable(magician) {
-    cy.get("td").should("contain", magician);
+    cy.get('[data-cy="trick-list_table"]').should("contain", magician);
 }
 
 export function assertTrickInTable(trick) {
-    cy.get("td").should("contain", trick);
+    cy.get('[data-cy="trick-list_table"]').should("contain", trick);
 } 

@@ -1,4 +1,3 @@
-import { openTrickList } from '../support/helpers/components/app'
 import {
   assertUrl,
   assertColumnNamesTable,
@@ -7,16 +6,13 @@ import {
 } from "../support/helpers/components/trick-list";
 
 describe('trick-list', () => {
-    it('has table with tricks by magician', () => {
+    it('shows tricks', () => {
         // test parameters
-        const magician = 'Harry Houdini';
-        const trick = 'Aztec Tomb'
+        const magician = 'Jean Chassanion';
+        const trick = 'Bullet catch'
 
-        // at the moment the only way to get to the list of tricks
-        // is by navigating there from the homepage
-        cy.visit('');
+        cy.visit('/trick-list');
 
-        openTrickList()
         assertUrl()
         assertColumnNamesTable()
         // if one of the magicians is displayed, it probably works for all of them
